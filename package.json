@@ -1,0 +1,11 @@
+{
+  "name": "spinel-care-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spinel Care — Premium NDIS Provider website (static HTML + Tailwind CDN)",
+  "scripts": {
+    "dev": "npx --yes serve .",
+    "start": "npx --yes serve .",
+    "build": "node -e \"console.log('Static HTML site — no build step required. Vercel serves files as-is.')\""
+  }
+}
