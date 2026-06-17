@@ -130,6 +130,32 @@
         }
         [type='checkbox'], [type='radio'] { accent-color: #4CB7A5; }
         [type='checkbox']:focus, [type='radio']:focus { --tw-ring-color: #4CB7A5 !important; }
+        /* ===== Mobile & tablet responsiveness (desktop >=1024px unchanged) ===== */
+        @media (max-width: 1023px) {
+            html .text-display-lg, html .md\:text-display-lg { font-size: 44px !important; line-height: 1.08 !important; }
+            html .min-h-\[870px\] { min-height: 640px !important; }
+        }
+        @media (max-width: 767px) {
+            html .text-display-lg, html .md\:text-display-lg { font-size: 32px !important; line-height: 1.12 !important; }
+            html .text-headline-lg, html .md\:text-headline-lg { font-size: 26px !important; line-height: 1.2 !important; }
+            html .text-headline-md { font-size: 20px !important; line-height: 1.3 !important; }
+            html .text-body-lg { font-size: 16px !important; line-height: 1.55 !important; }
+            html .min-h-\[870px\] { min-height: 540px !important; }
+            html .py-2xl { padding-top: 56px !important; padding-bottom: 56px !important; }
+            html .pt-2xl { padding-top: 56px !important; }
+            html .py-xl  { padding-top: 40px !important; padding-bottom: 40px !important; }
+            html .gap-2xl { gap: 40px !important; }
+            html .gap-xl  { gap: 32px !important; }
+            html .mb-2xl { margin-bottom: 40px !important; }
+            html .mb-xl  { margin-bottom: 28px !important; }
+            html .p-xl  { padding: 28px !important; }
+            html .p-lg  { padding: 24px !important; }
+            html .px-xl { padding-left: 22px !important; padding-right: 22px !important; }
+            html .px-lg { padding-left: 22px !important; padding-right: 22px !important; }
+            /* hero CTAs: fit + stack full width neatly */
+            html .cta-row { width: 100%; }
+            html .cta-row > a { flex: 1 1 100%; text-align: center; }
+        }
         /* ===== Subtle 3D depth effects (homepage preview) ===== */
         .card-3d {
             border: 1px solid rgba(0, 33, 71, 0.06);
@@ -211,7 +237,7 @@
 <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-medium" href="/careers">Careers</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-medium" href="/contact">Contact</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-medium" href="/faqs">FAQs</a>
-</nav><div class="flex items-center gap-md"><a href="/client-referral" class="inline-block bg-primary text-white px-md py-sm rounded-lg font-label-md hover:bg-on-primary-fixed-variant transition-all duration-300 shadow-lg shadow-primary/10">Client Referral</a></div></div></header>
+</nav><div class="flex items-center gap-md"><a href="/client-referral" class="inline-block bg-primary text-white px-md py-sm rounded-lg font-label-md hover:bg-on-primary-fixed-variant transition-all duration-300 shadow-lg shadow-primary/10">Client Referral</a><button id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-primary/5 transition-colors"><span id="mobileMenuIcon" class="material-symbols-outlined" aria-hidden="true">menu</span></button></div></div><div id="mobileMenu" class="lg:hidden hidden absolute top-full left-0 right-0 bg-white border-t border-surface-variant/40 shadow-xl"><nav class="max-w-container-max mx-auto px-gutter py-sm flex flex-col" aria-label="Mobile navigation"><a href="/" class="py-3 text-on-surface-variant hover:text-primary font-label-md border-b border-surface-variant/30 transition-colors">Home</a><a href="/about" class="py-3 text-on-surface-variant hover:text-primary font-label-md border-b border-surface-variant/30 transition-colors">About Us</a><a href="/services" class="py-3 text-on-surface-variant hover:text-primary font-label-md border-b border-surface-variant/30 transition-colors">Services</a><a href="/support-at-home" class="py-3 text-on-surface-variant hover:text-primary font-label-md border-b border-surface-variant/30 transition-colors">Support at Home</a><a href="/careers" class="py-3 text-on-surface-variant hover:text-primary font-label-md border-b border-surface-variant/30 transition-colors">Careers</a><a href="/contact" class="py-3 text-on-surface-variant hover:text-primary font-label-md border-b border-surface-variant/30 transition-colors">Contact</a><a href="/faqs" class="py-3 text-on-surface-variant hover:text-primary font-label-md border-b border-surface-variant/30 transition-colors">FAQs</a><a href="/client-referral" class="mt-sm py-3 text-center bg-primary text-white rounded-lg font-label-md hover:bg-on-primary-fixed-variant transition-colors">Client Referral</a></nav></div></header>
 <!-- Hero Section -->
 <section class="scroll-reveal hero-motion relative min-h-[870px] flex items-center overflow-hidden" data-stitch-vh="min-h-[870px]===min-h-[85vh]">
 <div class="absolute inset-0">
@@ -499,4 +525,5 @@
   }
 })();
 </script>
+<script id="mobilemenu-js">(function(){var b=document.getElementById("mobileMenuBtn"),m=document.getElementById("mobileMenu"),i=document.getElementById("mobileMenuIcon");if(!b||!m)return;function c(){m.classList.add("hidden");b.setAttribute("aria-expanded","false");if(i)i.textContent="menu";}function t(){if(m.classList.contains("hidden")){m.classList.remove("hidden");b.setAttribute("aria-expanded","true");if(i)i.textContent="close";}else{c();}}b.addEventListener("click",t);m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",c);});document.addEventListener("keydown",function(e){if(e.key==="Escape")c();});window.addEventListener("resize",function(){if(window.innerWidth>=1024)c();});})();</script>
 <script id="nav-active-js">(function(){function n(p){return p.replace(/\/+$/,"")||"/";}var path=n(location.pathname);document.querySelectorAll("header nav a").forEach(function(a){var h=a.getAttribute("href");if(!h)return;var u=new URL(h,location.origin);if(n(u.pathname)===path&&!u.hash){a.classList.add("nav-active");a.setAttribute("aria-current","page");}});var cr=document.querySelector('header a[href="/client-referral"]');if(cr&&path==="/client-referral"){cr.classList.add("nav-btn-active");cr.setAttribute("aria-current","page");}})();</script></body></html>
