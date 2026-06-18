@@ -159,6 +159,9 @@
             /* Enquiry / contact section: compact spacing, full-width fields */
             html .gap-lg { gap: 28px !important; }
             html .space-y-xl > :not([hidden]) ~ :not([hidden]) { margin-top: 24px !important; }
+            /* Force true single column on mobile (col-span-2 was creating an implicit 2nd column, squishing Name/Email) */
+            html .grid.grid-cols-1 { grid-template-columns: minmax(0, 1fr) !important; }
+            html .grid.grid-cols-1 > * { grid-column: auto !important; }
         }
         /* ===== Subtle 3D depth effects (homepage preview) ===== */
         .card-3d {
